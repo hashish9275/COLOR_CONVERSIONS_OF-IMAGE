@@ -85,12 +85,9 @@ cv2.destroyAllWindows()
 
 (2) Draw a circle at the center of the image.
 ```
-import cv2
-image = cv2.imread("car.jpeg")
-height, width, _ = image.shape
-center_coordinates = (width // 2, height // 2)
-res = cv2.circle(image, center_coordinates, 120, (0, 255, 0), 10)
-cv2.imshow('WINDOW', res)
+image2=image_resized.copy()
+res1=cv2.circle(image2,(250,225),150,(240,0,0),10)
+cv2.imshow('Image Window', res1)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
