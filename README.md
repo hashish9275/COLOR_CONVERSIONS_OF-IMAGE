@@ -104,20 +104,27 @@ cv2.destroyAllWindows()
 (3) Draw a rectangle around a specific region of interest in the image.
 ```
 import cv2
+
 image = cv2.imread("car.jpeg")
 image = cv2.resize(image, (506, 317))
-start = (150, 100)
-stop = (300, 200)
+
+# Get the image dimensions
+height, width = image.shape[:2]
+
+# Calculate the start and stop points for the rectangle, ensuring it stays within the image borders
+start = (0, 0)
+stop = (width - 1, height - 1)
+
 color = (255, 255, 100)
-thickness = 10           
+thickness = 10
+
 res_img = cv2.rectangle(image, start, stop, color, thickness)
 cv2.imshow('WINDOW', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-```
 ### OUTPUT:
 
-![4](https://github.com/user-attachments/assets/d62e677b-7552-4aa4-8a73-1391e0e36dbb)
+![image](https://github.com/user-attachments/assets/6c12d82d-71cd-4d3f-8b3d-447bb3e9f5d1)
 
 (4) Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
